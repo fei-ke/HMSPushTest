@@ -2,6 +2,7 @@
 
 package one.yufz.pushtest.main
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -28,6 +29,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import one.yufz.pushtest.R
 import one.yufz.pushtest.ui.theme.AppTheme
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MainScreen() {
     AppTheme {
@@ -39,7 +41,7 @@ fun MainScreen() {
             val token by viewModel.tokenState.collectAsState()
             val loading by viewModel.loadingState.collectAsState()
 
-            Box(modifier = Modifier.padding(it)) {
+            Box(Modifier.padding(it)) {
                 Column() {
                     Row(
                         horizontalArrangement = Arrangement.SpaceEvenly, modifier = Modifier.fillMaxWidth()
